@@ -6,7 +6,7 @@ import s from './Form.module.css';
 
 export default function Form() {
   const dispatch = useDispatch();
-  const contactsState = useSelector(getContactsState).contacts;
+  const contactsState = useSelector(getContactsState);
 
   const handleSubmit = e => {
     e.preventDefault();

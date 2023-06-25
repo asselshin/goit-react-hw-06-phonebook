@@ -3,8 +3,9 @@ import { getContactsState, getFilterState } from 'redux/selectors';
 import ContactListItem from '../ContactListItem/ContactListItem';
 
 const ContactList = () => {
-  const contacts = useSelector(getContactsState).contacts;
-  const normalizedFilter = useSelector(getFilterState).toLowerCase();
+  const contacts = useSelector(getContactsState);
+  const filter = useSelector(getFilterState);
+  const normalizedFilter = filter.toLowerCase();
 
   const filteredContacts = contacts.filter(contact =>
     contact.name.toLowerCase().includes(normalizedFilter)
